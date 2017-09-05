@@ -1,0 +1,9 @@
+---
+applications:
+- name: personality
+  command: npm start
+  path: .
+  memory: 512M
+  instances: 1
+  services:
+  - my-pi-service

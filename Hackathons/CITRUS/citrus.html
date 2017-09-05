@@ -1,0 +1,146 @@
+<html>
+
+<head>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.js'></script>
+</head>
+<style>
+	
+	#charts{
+		display: flex;
+		flex-direction: column;
+		align-content: center;
+		align-items: center;
+	}
+	.charts {
+		align-content: center;
+		padding: 10%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		
+		
+	}
+</style>
+
+<body>
+	<div id = "charts">
+	<div class = "charts" style="width:70%;">
+		<canvas id="myChart1"></canvas>
+	</div>
+	<div  class = "charts" style="width:70%;">
+		<canvas id="myChart2"></canvas>
+	</div>
+	
+	<div  class = "charts" style="width:50%;">
+		<canvas id="myChart3"></canvas>
+	</div>
+	
+	
+	<div id="button">
+		<button class="zipButton" onclick="createChart()">Create Chart</button>
+	</div>
+	</div>
+	
+	<script>
+		function createChart() {
+			
+			
+			var ctx = document.getElementById("myChart1");
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ["Q1", "Q2", "Q3", "Q4", "Q5", "Q6", "Q7", "Q8", "Q9", "Q10"],
+        datasets: [{
+            label: 'Results of Questionaire',
+            data: [12, 19, 3, 5, 2, 3, 1, 9, 3, 0, 1],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+				'rgba(255, 99, 132, 0.2)',
+				'rgba(153, 102, 255, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
+			
+			
+			
+			var ctx = document.getElementById("myChart2");
+			var myChart = new Chart(ctx, {
+				type: 'polarArea'
+				, data: {
+					labels: ["January", "February", "March", "April", "May", "June", "July"]
+					, datasets: [
+						{
+							label: "My First dataset"
+							, backgroundColor: [
+                'rgba(255, 99, 132, 0.2)'
+                , 'rgba(54, 162, 235, 0.2)'
+                , 'rgba(255, 206, 86, 0.2)'
+                , 'rgba(75, 192, 192, 0.2)'
+                , 'rgba(153, 102, 255, 0.2)'
+                , 'rgba(255, 159, 64, 0.2)'
+            ]
+							, borderColor: [
+                'rgba(255,99,132,1)'
+                , 'rgba(54, 162, 235, 1)'
+                , 'rgba(255, 206, 86, 1)'
+                , 'rgba(75, 192, 192, 1)'
+                , 'rgba(153, 102, 255, 1)'
+                , 'rgba(255, 159, 64, 1)'
+            ]
+							, borderWidth: 1
+							, data: [65, 59, 80, 81, 56, 55, 40]
+						, }
+    ]
+				}
+				, options: {
+					scales: {
+						yAxes: [{
+							ticks: {
+								beginAtZero: true
+							}
+            }]
+					}
+				}
+			});
+			
+			
+			var ctx = document.getElementById("myChart3");
+			var myChart = new Chart(ctx, {
+				type: 'doughnut'
+				, data: {
+					labels: ["January", "February", "March", "April", "May", "June", "July"]
+					, datasets: [{
+							label: "My First dataset"
+							, backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)']
+							, borderColor: ['rgba(255,99,132,1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)']
+							, borderWidth: 1
+							, data: [65, 59, 80, 81, 56, 55, 40]
+						, }
+    ]
+				}
+			});
+		}
+	</script>
+</body>
+
+</html>
